@@ -25,11 +25,17 @@ import ScrollToTop from "./components/ScrollToTop";
 import HeroSectionComponent from "./components/hero/hero_section.component";
 import HomeComponent from "./components/home/home.component";
 import LoginComponent from "./components/login/login.component";
+import SignUpComponent from "./components/signup/signup.component";
+import DashboardComponent from "./components/dashboard/dashboard.component";
+import SettingComponent from "./components/dashboard/settings/settings.component";
+import WriterApplicationComponent from "./components/dashboard/writers/writer_application.component";
+import UserComponent from "./components/dashboard/users/user.component";
+import PricingComponent from "./components/pricing/pricing.component";
+import ExploreComponent from "./components/post/post.component";
+import PostDetailsComponent from "./components/post/post.details.component";
 import NotFoundComponent from "./components/not-found.component";
 import PaymentComponent from "./components/home/pricing/payment.component";
-import PostDetailsComponent from "./components/post/post.details.component";
 import PostListsComponent from "./components/dashboard/posts/post_lists.component";
-import PricingComponent from "./components/pricing/pricing.component";
 import PrivacyPolicy from "./components/footer/Privacy.tsx";
 import CookiePolicy from "./components/footer/cookie-policy.tsx";
 import Terms from "./components/footer/terms.tsx";
@@ -43,11 +49,8 @@ import MagicCursorComponent from "./components/magic-cursor/magic_cursor.compone
 import ContributorsComponent from "./components/footer/contributors";
 import StoryInspirationWrapper from "./components/StoryInspirationWrapper";
 import WritingAssistantComponent from "./components/writing-assistant/writing_assistant.component";
-import BranchingStory from "./components/stories/BranchingStory";
 import ProfileComponent from "./components/dashboard/profile/profile.component";
 import ReportBug from "./components/report-bug/ReportBug";
-import SettingComponent from "./components/dashboard/settings/settings.component";
-import SignUpComponent from "./components/signup/signup.component";
 import StoryWorkspace from "./components/story/StoryWorkspace";
 
 type ProtectedRouteProps = {
@@ -72,7 +75,6 @@ const ProtectedRoute = ({ allowedRoles, element }: ProtectedRouteProps) => {
 // 2. CENTRAL ROUTER MATRIX (Initialized exactly once in the global scope)
 // =========================================================================
 const ALL_ROLES = [USER_ROLE.ADMIN, USER_ROLE.SUPER_ADMIN, USER_ROLE.WRITER, USER_ROLE.USER];
-const ELEVATED_ADMIN_ROLES = [USER_ROLE.ADMIN, USER_ROLE.SUPER_ADMIN];
 
 const router = createBrowserRouter([
   {
@@ -109,7 +111,6 @@ const router = createBrowserRouter([
       { path: "guidelines", element: <GuidelinesComponent /> },
       { path: "contributors", element: <ContributorsComponent /> },
       { path: "report-bug", element: <ReportBug /> },
-      { path: "forgot-password", element: <ForgotPasswordComponent /> },
 
       // Protected Sub-Tree running under the RootLayout context
       {
