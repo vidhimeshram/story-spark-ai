@@ -96,10 +96,10 @@ const SSInput = <T extends FieldValues>({
 
           <button
             type="button"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowLocalPassword(!showLocalPassword)}
 
             className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none"
-            aria-label={showPassword ? "Hide password" : "Show password"}
+            aria-label={showLocalPassword ? "Hide password" : "Show password"}
 
 
 
